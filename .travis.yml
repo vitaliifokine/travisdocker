@@ -5,3 +5,12 @@ services:
 script:
     - docker build -t mannydesigns/node .
     - docker images mannydesigns/node
+
+before_deploy:
+    - docker login -u <vitaliifokine> -p <vf281992>
+
+deploy:
+    provider: script
+    script: docker push new-repo:sample
+    on:
+        branch: master
