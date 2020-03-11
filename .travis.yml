@@ -12,5 +12,6 @@ before_deploy:
 deploy:
     provider: script
     script: docker push mannydesigns/node
+    edge: true
     on:
         branch: master
